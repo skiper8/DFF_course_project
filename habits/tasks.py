@@ -1,5 +1,5 @@
-from django.conf import settings
 from telebot import TeleBot
+from config import settings
 from config.celery import app
 from habits.models import Habit
 

@@ -1,4 +1,6 @@
 from rest_framework import viewsets, generics
+from rest_framework.permissions import IsAuthenticated
+
 from habits.models import Habit
 from habits.pagination import HabitPagination
 from habits.serializers import HabitSerializers
