@@ -13,7 +13,6 @@ def create_habit_schedule(habit):
 
     PeriodicTask.objects.create(
         crontab=crontab_schedule,
-        # interval=interval,
         name=f'Habit Task - {habit.name}',
         task='habit.tasks.send_telegram_message',
         args=[habit.id],
