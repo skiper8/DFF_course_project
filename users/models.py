@@ -2,7 +2,6 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from users.services import UserCManager
 from django.utils.translation import gettext_lazy as _
-
 NULLABLE = {'null': True, 'blank': True}
 
 
@@ -17,9 +16,8 @@ class User(AbstractUser):
     phone = models.CharField(max_length=35, verbose_name='телефон', **NULLABLE)
     avatar = models.ImageField(upload_to='users/', verbose_name='аватар', **NULLABLE)
     city = models.CharField(max_length=100, verbose_name='Город', **NULLABLE)
-    role = models.CharField(max_length=10, choices=UserRoles.choices, default=UserRoles.MEMBER, verbose_name='роль',
-                            **NULLABLE)
-    is_active = models.BooleanField(default=True, verbose_name='активность')
+    role = models.CharField(max_length=10, choices=UserRoles.choices, default=UserRoles.MEMBER, verbose_name='роль', **NULLABLE)
+    is_active = models.BooleanField(default=True,  verbose_name='активность')
     chat_id = models.CharField(max_length=15, verbose_name='ID бота TG', **NULLABLE)
 
     USERNAME_FIELD = "email"
