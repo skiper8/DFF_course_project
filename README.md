@@ -1,6 +1,7 @@
 ## Курсовая 7. DRF
 
 ### 1. Для запуска приложения необходимо настроить виртуальное окружение и установить все необходимые зависимости с помощью команд:
+
     Команда для Windows:
         1- python -m venv venv
         2- venv\Scripts\activate
@@ -12,9 +13,17 @@
         3- pip install -r requirement.txt
 
 ### 2. Для запуска celery:
-        1- celery -A config worker -l info  
+
+    Команда для Windows:
+        1- celery -A config worker -l INFO -P eventlet
+        2- celery -A config beat -l info
+
+    Команда для Unix:
+        1- celery -A config worker -l INFO
+        2- celery -A config beat -l info
 
 ### 3. Для запуска redis:
+
     Redis официально не поддерживается в Windows: 
         1- Установите WSL2, Ubuntu. Подробности смотрите тут https://redis.io/docs/getting-started/installation/install-redis-on-windows/
         2- sudo apt-get update
@@ -27,7 +36,8 @@
     Команда для Unix:
         1- redis-cli
 
-### 4. Для заполнения моделей данными необходимо выполнить следующую команду: 
+### 4. Для заполнения моделей данными необходимо выполнить следующую команду:
+
     Команда для Windows:
         1- python manage.py loaddata data.json
 
@@ -35,9 +45,11 @@
         1- python3 manage.py loaddata data.json
 
 ### 5. Для работы с переменными окружениями необходимо заполнить файл
+
     - .env.sample
 
 ### 6. Для создания администратора (createsuperuser)
+
     - заполните поля email, PASSWORD. users/management/commands/csu.py
     Команда для Windows
     1- python manage.py csu
@@ -45,14 +57,15 @@
     Команда для Unix
     - python3 manage.py csu
 
-### 7. Для запуска приложения: 
+### 7. Для запуска приложения:
+
     Команда для Windows:
     - python manage.py runserver
 
     Команда для Unix:
     - python3 manage.py runserver
 
-### 8. Для создания задачи зайдите в админ-панель приложения и создайте задачу: 
+### 8. Для создания задачи зайдите в админ-панель приложения и создайте задачу:
 
     - Выберите название задачи;
     - Выберите задачу;
